@@ -4,6 +4,10 @@ var chartDom = document.getElementById('main');
 var myChart = echarts.init(chartDom);
 var option;
 option = {
+    title: {
+        text: 'Phase diff',
+        x: 'center'
+    },
     xAxis: {
         type: 'category',
         data: [...Array(1400).keys()]
