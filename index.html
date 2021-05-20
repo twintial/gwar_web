@@ -12,12 +12,12 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body style="background: white;">
-    <!-- <div class="alert alert-secondary" style="text-align: center;" role="alert">
-        <span">Sleep</span>
-    </div> -->
-    <div class="alert alert-success"  style="text-align: center;" role="alert">
-        <span">Waken</span>
+    <div id="waken" class="alert alert-secondary" style="text-align: center;" role="alert">
+        <span id="waken-text">Sleep</span>
     </div>
+    <!-- <div id="wake" class="alert alert-success"  style="text-align: center;" role="alert">
+        <span">Waken</span>
+    </div> -->
     <div style="text-align: center;">
         <div id="main" style="width: 600px;height:400px;"></div>
         <!-- <label style="color: #000; font-size: medium;">Phase diff</label> -->
@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label>Now Gesture:</label>
+                <label>Current Gesture:</label>
                 <img src="./resource/pic/1.png" class="rounded mx-auto d-block" alt="...">
             </div>
             <div class="col">
