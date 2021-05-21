@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RECORD</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');</script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background: white;">
+    <div class="container" style="margin-top: 10%;">
+        <div class="progress">
+            <div id='progress-bar' class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+        <div class="row" style="margin-top: 5%;">
+            <div class="col" style="text-align: center;">
+                <button id="start" type="button" class="btn btn-success">Start</button>
+            </div>
+            <div class="col" style="text-align: center;">
+                <button id="stop" type="button" class="btn btn-danger">Stop</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5%; text-align: center;">
+            <input type="text" class="form-control" placeholder="gesture name">
+        </div>
+        <div class="row" style="margin-top: 5%; text-align: center;">
+            <button id="finish" type="button" class="btn btn-primary">完成</button>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>

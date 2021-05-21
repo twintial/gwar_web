@@ -2,8 +2,9 @@ var bufferToArrayBuffer = require('buffer-to-arraybuffer');
 var echarts = require('echarts');
 var chartDom = document.getElementById('main');
 var myChart = echarts.init(chartDom);
+const ipc = require('electron').ipcRenderer
 var option;
-window.$ = window.jQuery = require('jquery')
+// window.$ = window.jQuery = require('jquery')
 option = {
     title: {
         text: 'Phase diff',
@@ -64,7 +65,7 @@ waken_server.on('listening', function(){
 waken_server.on('connection', function(socket){
     socket.on('data', function(buffer_data){
         console.log(buffer_data.toString())
-        $('#waken').removeClass('alert alert-secondary').addClass('alert alert-success')
+        $('#waken').attr("class", 'alert alert-success')
         $('#waken-text').html('waken')
     })
 })
@@ -78,5 +79,10 @@ gesture_server.on('connection', function(socket){
     socket.on('data', function(buffer_data){
         console.log(buffer_data.readInt8())
         gesture_code = buffer_data.readInt8()
+        $('#gesture-img').attr("src", "./resource/pic/x.png".replace('x', gesture_code));
     })
+})
+
+$('#record').on('click', function(){
+    ipc.send('open-record-window')
 })
