@@ -64,9 +64,12 @@ waken_server.on('listening', function(){
 })
 waken_server.on('connection', function(socket){
     socket.on('data', function(buffer_data){
-        console.log(buffer_data.toString())
-        $('#waken').attr("class", 'alert alert-success')
-        $('#waken-text').html('waken')
+        w = buffer_data.toString()
+        if (w === '1'){
+            $('#waken').attr("class", 'alert alert-success')
+            $('#waken-text').html('waken')
+        }
+
     })
 })
 
@@ -84,5 +87,9 @@ gesture_server.on('connection', function(socket){
 })
 
 $('#record').on('click', function(){
+    var client = net.connect({port: 31503}, function() {
+        console.log('连接到服务器！');  
+    });
+    client.write('1')
     ipc.send('open-record-window')
 })

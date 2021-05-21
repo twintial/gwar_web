@@ -2,6 +2,7 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 const ipc = require('electron').ipcMain
+const net = require('net')
 let record_win = null;
 ipc.on('open-record-window',()=>
 {
@@ -21,6 +22,12 @@ ipc.on('open-record-window',()=>
     record_win.once('ready-to-show', function () {
         record_win.show();
     });
-    record_win.on('closed',()=>{record_win = null})
+    record_win.on('closed',()=>{
+        record_win = null
+        var client = net.connect({port: 31503}, function() {
+            console.log('连接到服务器！');  
+        });
+        client.write('0')
+    })
 
 })
