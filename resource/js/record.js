@@ -1,5 +1,4 @@
 var net = require('net');
-
 $('#start').on('click', function(){
     var client = net.connect({port: 31503}, function() {
         console.log('连接到服务器！');  

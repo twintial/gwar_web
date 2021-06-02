@@ -14,7 +14,8 @@ ipc.on('open-record-window',()=>
         width: 600,
         height: 400,
         webPreferences: {
-            nodeIntegration : true
+            nodeIntegration: true,
+            contextIsolation: false,
         },
         show: false
     })
