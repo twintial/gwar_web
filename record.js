@@ -32,3 +32,8 @@ ipc.on('open-record-window',()=>
     })
 
 })
+
+ipc.on('close-record-window',()=>
+{
+    record_win.close();
+})
